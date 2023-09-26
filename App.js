@@ -1,17 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Cadastro from "./src/screens/Cadastro";
+import Drawer from "./src/screens/Drawer";
+import Inicio from "./src/screens/Inicio";
 
-import React from 'react';
+const Stack = createStackNavigator()
+
+const App = () => {
+  return (
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Inicio" screenOptions={{ headerShown: false,  headerTintColor: 'tomato', headerTitle: { backgroundColor: 'Violet' } }}>
+        <Stack.Screen name="Inicio" component={Inicio} />
+        <Stack.Screen name="Drawer" component={Drawer} />
+       
+      </Stack.Navigator>
+
+    </NavigationContainer>
+  )
 
 
+}
 
-return(
-    <View >
-    </View>
-);
-
-export default App;
+export default App 
