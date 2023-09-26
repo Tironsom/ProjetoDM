@@ -1,19 +1,25 @@
 import React from "react";
-import { View, Text} from "react-native";
-import Texto from "./components/Texto";
-import But from "./components/But"
+import { View, Text,StyleSheet} from "react-native";
+import Texto from "../components/Texto";
+import But from "../components/But";
+import { Button} from "react-native-paper";
+import { useState } from "react";
 
-const Inicio = () => {
+const Inicio = (props) => {
     const [nome, setNome] = useState("");
     const handleNomeChange = (newNome) => {
         setNome(newNome);
       };
+      const gotoCadastro = ()=>{
+        props.navigation.navigate('Drawer')
+
+    }
    return(
     <View>
         <View>
             <Texto label="Email:" onChangeText={handleNomeChange}></Texto>
             <Texto label="Senha:" onChangeText={handleNomeChange}></Texto>
-            <But label="Entrar" color="green" size="large" />
+            <Button style = {{backgroundColor:'green'}}onPress={gotoCadastro} >Entrar</Button>
         </View>
         <View>
             <But label="Criar minha conta" color="blue" size="large" />
@@ -26,7 +32,7 @@ const Inicio = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    container:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
@@ -38,3 +44,5 @@ const styles = StyleSheet.create({
         backgroundColor:'#372775',
     }
   });
+
+  export default Inicio
