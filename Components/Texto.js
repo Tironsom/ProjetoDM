@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useState } from "react";
 const handleTextChange = (newText) => {
     setText(newText);
@@ -7,21 +7,20 @@ const handleTextChange = (newText) => {
         onChangeText(newText);
     }
 };
-const Texto = ({label}) =>
-{
-    return(
+const Texto = ({ label }) => {
+    return (
         <View>
             <Text>(label)</Text>
             <TextInput style={styles.input}
-                value={text}
+                value={Text}
                 onChangeText={handleTextChange}>
             </TextInput>
-           
+
         </View>
     )
 
 }
-    
+
 const styles = StyleSheet.create({
     container: {
         marginBottom: 16,
@@ -41,4 +40,3 @@ const styles = StyleSheet.create({
 });
 
 export default Texto;
-
